@@ -1,0 +1,14 @@
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let account of accounts">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{account.bankAccountNumber}}</h5>
+          <p class="card-text">Balance: ₹{{account.balance}}</p>
+        </div>
+        <div class="card-footer text-muted">
+            <button (click)="onClickBeneficiary(account._id)" type="button" class="btn btn-primary float-start mt-3">Transfer</button>
+            <button (click)="onClickSummary(account._id)" type="button" class="btn btn-secondary float-end mt-3">Summary</button>
+        </div>
+      </div>
+    </div>
+  </div>

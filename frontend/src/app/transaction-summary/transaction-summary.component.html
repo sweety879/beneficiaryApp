@@ -1,0 +1,41 @@
+<!-- <div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let transaction of transactions">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title" *ngIf="transaction.receiver_id===account_id">{{transaction.receiver_id}}</h5>
+          <h5 class="card-title" *ngIf="transaction.sender_id===account_id">{{transaction.sender_id}}</h5>
+          <p class="card-text">{{transaction.amount}}</p>
+        </div>
+        <div class="card-footer text-muted">
+            <p class="card-title" *ngIf="transaction.receiver_id===account_id">RECEVIED</p>
+            <p class="card-title" *ngIf="transaction.sender_id===account_id">SENT</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="m-5">
+    <h3>Transactions Summary</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Account Id</th>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions;let i = index">
+            <th scope="row">{{i}}</th>
+            <td *ngIf="transaction.receiver_id===account_id">{{transaction.receiver_id}}</td>
+            <td *ngIf="transaction.sender_id===account_id">{{transaction.sender_id}}</td>
+            <td *ngIf="transaction.receiver_id===account_id">RECEVIED</td>
+            <td *ngIf="transaction.sender_id===account_id">SENT</td>
+            <td>₹{{transaction.amount}}</td>
+            <td>{{transaction.date | date:'short' }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
